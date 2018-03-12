@@ -7,22 +7,39 @@ The E programming language is similar to C, C++, Java, Pascal, and Modula-2, but
 The following grammar partially describes the E language. In the EBNF below, nonterminals are in lowercase; terminal symbols are enclosed in single quotes to avoid potential confusion in the use of characters that are both meta-symbols in the grammar and terminals in E, e.g., “[”
 
  program ::= block
+ 
  block ::= declaration_list statement_list
+ 
  declaration_list ::= {declaration}
+ 
  statement_list ::= {statement}
+ 
  declaration ::= ’@’ id { ’,’ id }
+ 
  statement ::= assignment | print | do | if
+ 
  print ::= ’!’ expr
+ 
  assignment ::= ref_id ’=’ expr
+ 
  ref_id ::= [ ’ ̃’ [ number ] ] id
+ 
  do ::= ’<’ guarded_command ’>’
+ 
  if ::= ’[’ guarded_command { ’|’ guarded_command } [ ’%’ block ] ’]’
+ 
  guarded_command ::= expr ’:’ block
+ 
  expr ::= term { addop term }
+ 
  term ::= factor { multop factor }
+ 
  factor ::= ’(’ expr ’)’ | ref_id | number
+ 
  addop ::= ’+’ | ’-’
+ 
  multop ::= ’*’ | ’/’
+ 
 
 
 
