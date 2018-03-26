@@ -1,4 +1,3 @@
-/* *** This file is given as part of the programming assignment. *** */
 
 // Token Kind (internal representations of tokens)
 
